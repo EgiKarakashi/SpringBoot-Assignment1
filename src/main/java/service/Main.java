@@ -41,11 +41,18 @@ public class Main {
         Spid spid2 = createSpid(3, user2, Status.PENDING, "Mike Jones's Spid");
 
 
-        editUser(user, 4, "John", "Doe", "jdoe12");
+        
+        try {
+            editUser(user, 4, "John", "Doe", "jdoe12");
+            editSpid(spid, 4, user, Status.APPROVED, "John Doe's Spid");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        
         editUser(user1, 5, "Jane", "Smith", "jsmith12");
         editUser(user2, 6, "Mike", "Jones", "mjones12");
 
-        editSpid(spid, 4, user, Status.APPROVED, "John Doe's Spid");
+        
         editSpid(spid1, 5, user1, Status.APPROVED, "Jane Smith's Spid");
         editSpid(spid2, 6, user2, Status.APPROVED, "Mike Jones's Spid");
 
